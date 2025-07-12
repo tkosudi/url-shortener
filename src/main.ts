@@ -8,6 +8,6 @@ app.get('/', async function handler(request, reply) {
   return { message: 'URL Shortener is up 🚀' }
 })
 
-app.listen({ port: 3000 }).then((address) => {
+app.listen({ port: 3000, host: '0.0.0.0' }).then((address) => {
   app.log.info(`Server listening at ${address}`)
 })

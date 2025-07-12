@@ -4,8 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsx src/main.ts"
+    "dev": "tsx src/main.ts",
+    "dev:up": "docker-compose up --build -d",
+    "dev:down": "docker-compose down --volumes",
+    "db:migrate": "npx prisma migrate dev",
+    "db:migrate:docker": "docker exec -it url-shortener-app npx prisma migrate dev --name init",
+    "db:deploy": "npx prisma migrate deploy",
+    "db:generate": "npx prisma generate"
   },
   "keywords": [],
   "author": "",
